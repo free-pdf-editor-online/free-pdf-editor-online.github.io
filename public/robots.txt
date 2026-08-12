@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://free-pdf-editor-online.github.io/sitemap.xml

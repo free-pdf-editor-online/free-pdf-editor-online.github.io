@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PdfEditor from '../components/PdfEditor.jsx';
+---
+
+<Layout>
+  <div class="px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl mb-4">
+        Edit PDFs <span class="text-red-600">Securely</span> in your Browser
+      </h1>
+      <p class="text-lg text-slate-600">
+        Add styled text, draw signatures, highlight content, organize pages, and add stamps for free. 
+        Everything processes locally - your files never leave your device.
+      </p>
+    </div>
+
+    {/* The React PDF Editor Island */}
+    <div class="mb-24">
+      <PdfEditor client:only="react" />
+    </div>
+
+    {/* SEO & Informational Content */}
+    <div class="max-w-4xl mx-auto mt-20 space-y-20">
+      
+      {/* 3 Steps Section */}
+      <section>
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">How to Edit a PDF Online for Free</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+            <div class="w-12 h-12 bg-red-100 text-red-700 font-bold text-xl rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-800">Upload PDF</h3>
+            <p class="text-slate-600">Select your file. It opens instantly in your browser without uploading to any server.</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+            <div class="w-12 h-12 bg-red-100 text-red-700 font-bold text-xl rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-800">Edit, Organize & Annotate</h3>
+            <p class="text-slate-600">Use our intuitive tools to add styled text, highlight data, insert stamps, and delete or reorder pages.</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+            <div class="w-12 h-12 bg-red-100 text-red-700 font-bold text-xl rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+            <h3 class="text-xl font-semibold mb-2 text-slate-800">Download</h3>
+            <p class="text-slate-600">Click download to save the edited PDF directly to your device. No watermarks!</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section class="bg-red-50 p-8 md:p-12 rounded-3xl border border-red-100">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Choose Our Private PDF Editor?</h2>
+        <div class="space-y-4 text-slate-700 text-lg">
+          <p>
+            Most online PDF editors force you to upload your sensitive documents to their servers. This poses a massive security risk, especially for documents containing personal information, financial data, or legal signatures.
+          </p>
+          <p>
+            <strong>Our tool is different.</strong> We leverage modern browser technologies to parse, render, and edit your PDF files entirely client-side. Your file stays on your computer. It is never uploaded, transmitted, or stored on any server. 
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-4 font-medium text-slate-800">
+            <li>Zero server uploads</li>
+            <li>100% Free with no hidden fees</li>
+            <li>No watermarks added to your documents</li>
+            <li>Instant processing speeds</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* FAQ Accordion */}
+      <section>
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 font-semibold text-slate-900">
+              <h3 class="text-lg">Are you really not uploading my files?</h3>
+              <span class="shrink-0 rounded-full bg-slate-50 p-1.5 text-slate-900 sm:p-3 group-open:-rotate-180 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 leading-relaxed text-slate-600">
+              Yes, absolutely. We use JavaScript libraries that run entirely within your web browser. You can even disconnect from the internet after loading the page, and the editor will continue to work perfectly!
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 font-semibold text-slate-900">
+              <h3 class="text-lg">Does this editor add a watermark?</h3>
+              <span class="shrink-0 rounded-full bg-slate-50 p-1.5 text-slate-900 sm:p-3 group-open:-rotate-180 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 leading-relaxed text-slate-600">
+              No. We believe your documents are yours. We do not add any watermarks, branding, or modifications to your PDF other than the edits you explicitly make.
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 font-semibold text-slate-900">
+              <h3 class="text-lg">What devices does this work on?</h3>
+              <span class="shrink-0 rounded-full bg-slate-50 p-1.5 text-slate-900 sm:p-3 group-open:-rotate-180 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 leading-relaxed text-slate-600">
+              It works on any modern web browser (Chrome, Firefox, Safari, Edge) across Windows, Mac, Linux, and even most mobile devices and tablets, providing you have a modern browser installed.
+            </p>
+          </details>
+
+          <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 font-semibold text-slate-900">
+              <h3 class="text-lg">Can I reorder or delete pages in my PDF?</h3>
+              <span class="shrink-0 rounded-full bg-slate-50 p-1.5 text-slate-900 sm:p-3 group-open:-rotate-180 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 leading-relaxed text-slate-600">
+              Yes! Click the <strong>Organize Pages</strong> button in the toolbar. You can drag and drop pages to rearrange their order, or click the trash can icon on any page thumbnail to delete unwanted pages from your document.
+            </p>
+          </details>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

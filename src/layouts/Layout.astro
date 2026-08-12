@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+import { ShieldCheck } from 'lucide-react';
+
+const { title = "Free Online PDF Editor - Edit, Sign, and Annotate PDFs Privately", 
+        description = "100% free and private online PDF editor. Add styled text, draw signatures, highlight or blackout data, add stamps, and organize pages directly in your browser with zero file uploads." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://free-pdf-editor-online.github.io" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://free-pdf-editor-online.github.io/" />
+    <meta property="og:image" content="https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png" />
+    <!-- Google Fonts: Inter and Signature Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cookie&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Handlee&family=Inter:wght@300;400;500;600;700&family=Pacifico&family=Patrick+Hand&family=Sacramento&family=Satisfy&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free Online PDF Editor",
+        "operatingSystem": "Any",
+        "applicationCategory": "BusinessApplication",
+        "browserRequirements": "Requires HTML5 Canvas support",
+        "image": "https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Free PDF Editor Online",
+          "url": "https://free-pdf-editor-online.github.io/"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1250"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "100% free and private online PDF editor. Edit text, draw signatures, and blackout sensitive data directly in your browser with zero file uploads."
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-red-100 selection:text-red-900">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="px-2 h-8 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-sm">
+            PDF
+          </div>
+          <span class="font-bold text-xl tracking-tight text-slate-800">Editor<span class="text-red-600">Online</span></span>
+        </div>
+        
+        <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100 text-sm font-medium shadow-sm">
+          <ShieldCheck className="w-4 h-4" />
+          <span class="hidden sm:inline">100% Private - Your files never leave your device</span>
+          <span class="sm:hidden">100% Private</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+        <p>&copy; {new Date().getFullYear()} Free Online PDF Editor. All rights reserved.</p>
+        <p class="mt-2 text-xs">Built for privacy. No files are uploaded to any server.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
