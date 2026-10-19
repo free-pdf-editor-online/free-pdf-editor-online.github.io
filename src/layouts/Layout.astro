@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Heart } from 'lucide-react';
 
 const { title = "Free Online PDF Editor - Edit, Sign, and Annotate PDFs Privately", 
         description = "100% free and private online PDF editor. Add styled text, draw signatures, highlight or blackout data, add stamps, and organize pages directly in your browser with zero file uploads." } = Astro.props;
@@ -58,7 +58,10 @@ const { title = "Free Online PDF Editor - Edit, Sign, and Annotate PDFs Privatel
         "publisher": {
           "@type": "Organization",
           "name": "Free PDF Editor Online",
-          "url": "https://free-pdf-editor-online.github.io/"
+          "url": "https://free-pdf-editor-online.github.io/",
+          "sameAs": [
+            "https://ko-fi.com/kishara"
+          ]
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -84,10 +87,24 @@ const { title = "Free Online PDF Editor - Edit, Sign, and Annotate PDFs Privatel
           <span class="font-bold text-xl tracking-tight text-slate-800">Editor<span class="text-red-600">Online</span></span>
         </div>
         
-        <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100 text-sm font-medium shadow-sm">
-          <ShieldCheck className="w-4 h-4" />
-          <span class="hidden sm:inline">100% Private - Your files never leave your device</span>
-          <span class="sm:hidden">100% Private</span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100 text-sm font-medium shadow-sm">
+            <ShieldCheck className="w-4 h-4" />
+            <span class="hidden sm:inline">100% Private - Your files never leave your device</span>
+            <span class="sm:hidden">100% Private</span>
+          </div>
+
+          <a
+            href="https://ko-fi.com/kishara"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Support the Developer on Ko-fi"
+            aria-label="Support the Developer on Ko-fi"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold text-xs sm:text-sm bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-amber-400 shrink-0"
+          >
+            <Heart className="w-4 h-4 fill-red-600 text-red-600" />
+            <span class="hidden md:inline">Support</span>
+          </a>
         </div>
       </div>
     </header>
@@ -98,6 +115,18 @@ const { title = "Free Online PDF Editor - Edit, Sign, and Annotate PDFs Privatel
 
     <footer class="bg-white border-t border-slate-200 py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+        <div class="mb-4">
+          <a
+            href="https://ko-fi.com/kishara"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-xs sm:text-sm bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-sm transition-all hover:scale-105"
+            aria-label="Support the Developer on Ko-fi"
+          >
+            <Heart className="w-4 h-4 fill-red-600 text-red-600" />
+            <span>Support the Developer</span>
+          </a>
+        </div>
         <p>&copy; {new Date().getFullYear()} Free Online PDF Editor. All rights reserved.</p>
         <p class="mt-2 text-xs">Built for privacy. No files are uploaded to any server.</p>
       </div>
